@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
-#include "util.hpp";
+#include "util.hpp"
+
 using namespace std;
 
 
