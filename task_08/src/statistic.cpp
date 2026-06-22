@@ -19,20 +19,23 @@ int ReturnKth(int k, std::vector<int>& vec, int a, int b) {
     while (vec[j] > pivot) {
       j--;
     }
-    if (i <= j) {
-      std::swap(vec[i], vec[j]);
-      i++;
-      j--;
+    if (i >= j) {
+      break;
     }
+    std::swap(vec[i], vec[j]);
+    i++;
+    j--;
   }
 
-  int left_len = j - a + 1;
+  int left_part = j - a + 1;
 
-  if (k <= left_len) {
+  if (k <= left_part) {
     return ReturnKth(k, vec, a, j);
-  } else if (k > (i - a)) {
-    return ReturnKth(k - (i - a), vec, i, b);
   } else {
-    return vec[j + 1];
+    return ReturnKth(k - left_part, vec, j + 1, b);
   }
+}
+
+int KthOrderStatistic(int k, std::vector<int> vec) {
+  return ReturnKth(k, vec, 0, vec.size() - 1);
 }

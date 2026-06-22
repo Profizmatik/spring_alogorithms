@@ -1,5 +1,4 @@
 #pragma once
 
 #include <vector>
-using namespace std;
-pair<int, int> func(int sum, const vector<int> &vec);
+std::pair<int, int> func(int sum, const std::vector<int> &vec);

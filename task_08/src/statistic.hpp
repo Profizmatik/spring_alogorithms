@@ -1,2 +1,6 @@
+#pragma once
 #include <vector>
-int ReturnKth(int k, std::vector<int>& vec, int a, int b);
+
+int KthOrderStatistic(int k, std::vector<int> vec);
+
+int ReturnKth(int k, std::vector<int>& vec, int l, int r);
